@@ -1,13 +1,37 @@
-Sebek idiotko
+1. Pobieranie z GitHub
 
-klikasz sobie **zielony** przycisk **Code** u góry nad plikami i wtedy masz przycisk "Download ZIP i klikasz go.
+Nie musisz nic instalować. Wejdź na stronę projektu i:
 
-<img width="115" height="49" alt="obraz" src="https://github.com/user-attachments/assets/dc24e3e9-a3b2-4f1f-a0b7-fadd48261ead" />
+    Szukaj dużego, zielonego przycisku z napisem "<> Code".
 
+    Kliknij go i wybierz ostatnią opcję: "Download ZIP".
 
+    Zapisz plik na Pulpicie, żebyś go nie zgubił.
 
-Wtedy otworzy Ci sie i pliki stamtąd po prostu przeciągasz do gemini i działa
+2. Rozpakowanie
 
-<img width="394" height="276" alt="obraz" src="https://github.com/user-attachments/assets/d75e1ea8-f1a4-41da-9e3b-0084288576a6" />
+Plik .zip to nie jest folder, to "paczka".
 
-Jeśli działać nie będzie to wtedy klikasz Prawym Przyciskiem Myszy -> WinRAR ->Wypadkuj do DBDPlugin
+    Kliknij na pobrany plik Prawym Przyciskiem Myszy.
+
+    Wybierz "Wypakuj wszystko..." (Extract All).
+
+    Po zakończeniu otworzy się zwykły, żółty folder. Wejdź w niego.
+
+3. Droga do plików (Gdzie jest kod?)
+
+Teraz musisz przejść przez "drzewo" folderów. Klikaj po kolei w to, co widzisz:
+
+    Otwórz folder projektu.
+
+    Wejdź w src (to skrót od source, czyli źródło).
+
+    Wejdź w main.
+
+    Wejdź w java.
+
+    Wejdź w pl.
+
+    Wejdź w dbd.
+
+Gratulacje! Jesteś na miejscu. To tutaj siedzą te foldery i pliki, o które chodziło.

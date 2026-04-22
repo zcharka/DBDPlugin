@@ -6,7 +6,7 @@
 
     <groupId>pl.dbd</groupId>
     <artifactId>DBDPlugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-PRE-FINAL</version>
     <packaging>jar</packaging>
 
     <name>DBDPlugin</name>
