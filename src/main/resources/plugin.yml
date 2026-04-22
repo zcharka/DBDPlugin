@@ -1,0 +1,40 @@
+name: DBDPlugin
+version: 2.0
+main: pl.dbd.DBDPlugin
+api-version: 1.21
+depend: [LuckPerms]
+softdepend: [PlaceholderAPI]
+author: DBDTeam
+description: Dead by Daylight plugin for Minecraft
+
+commands:
+  gotowy:
+    description: Oznacz sie jako gotowy
+  niegotowy:
+    description: Anuluj gotowosc
+  game:
+    description: Zarzadzanie gra
+  gamemap:
+    description: Zarzadzanie mapami
+  generator:
+    description: Zarzadzanie generatorami
+  exitgate:
+    description: Zarzadzanie bramami wyjsciowymi
+  locker:
+    description: Zarzadzanie szafami
+  ogladaj:
+    description: Obserwuj gracza
+  heal:
+    description: Wylecz gracza
+  healall:
+    description: Wylecz wszystkich graczy
+  hook:
+    description: Tworz/usuwaj haki
+  window:
+    description: Zarzadzanie oknami
+  dusze:
+    description: Zarzadzanie Duszami Nexusa
+  sklep:
+    description: Sklep serwerowy
+  ekwipunek:
+    description: Ekwipunek gracza
