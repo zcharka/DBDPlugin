@@ -1,0 +1,368 @@
+# ═══════════════════════════════════════════════════════════════
+#                    DBD PLUGIN - CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+
+# Wymagana liczba generatorów do otwarcia drzwi
+generators-required: 5
+
+# Dusze – komenda wywoływana gdy gracz dostaje nagrody
+souls:
+  add-command: "dusze dodaj {player} {amount} {reason}"
+  
+souls-rewards:
+  # Nagrody za finał meczu
+  match-killer-win: 5
+  match-killer-loss: 0
+  match-survivor-escape: 5
+  match-survivor-walkover: 5
+
+  # Działania w trakcie gry - Ocalały
+  survivor-heal: 1
+  survivor-unhook-rescuer: 1
+  survivor-unhook-rescued: 1
+  survivor-hide-locker: 1
+  survivor-exit-gate-open: 2
+  survivor-exit-gate-escape: 3
+
+  # Działania w trakcie gry - Zabójca
+  killer-hook-stage-1: 1
+  killer-hook-stage-2: 2
+  killer-hook-stage-3: 3
+  killer-kill: 3
+  killer-power-use: 1
+
+# ═══════════════════════════════════════════════════════════════
+#                    CZEK NA DUSZE NEXUSA
+# ═══════════════════════════════════════════════════════════════
+souls-cheque:
+  name: "&e&lCzek na Dusze Nexusa"
+  lore:
+    - "&7Wartość: &e{amount}"
+    - ""
+    - "&8▸ &7Kliknij &fPPM&7, by zrealizować."
+  message-created: "&8▸ &aStworzono czek na &e{amount} &7Dusz Nexusa."
+  message-redeemed: "&8▸ &aZrealizowano czek! &7Otrzymujesz &e{amount} &7Dusz Nexusa."
+
+# ═══════════════════════════════════════════════════════════════
+#                         HAKI
+# ═══════════════════════════════════════════════════════════════
+
+hook:
+  anti-camp-time: 30
+  carry-escape-required: 3
+  stage-timer: 60
+  skillcheck-interval: 10
+
+# ═══════════════════════════════════════════════════════════════
+#                    OBRAŻENIA OD UPADKU
+# ═══════════════════════════════════════════════════════════════
+
+fall:
+  downed-distance: 15
+  injured-distance: 12
+  slowdown-distance: 8
+
+# ═══════════════════════════════════════════════════════════════
+#                         AFK SYSTEM
+# ═══════════════════════════════════════════════════════════════
+afk:
+  warning-times:
+    - 240
+    - 300
+    - 360
+    - 600
+  bat-time: 240
+  kick-time: 660
+  warning-message: "§e§lUWAGA AFK! §7Brak ruchu od {time}s. Za {left}s zostaniesz wykopany!"
+  kick-message: "§c§lZostałeś wykopany za AFK podczas meczu!"
+  ban-message: "§c§lBan za wielokrotny AFK podczas meczu."
+  return-message: "§aWróciłeś do gry! Jesteś aktywny."
+  afk-threshold: 2
+  forget-afk-after-days: 7
+  ban-delays-seconds:
+    - 1800
+    - 3600
+    - 604800
+    - 1209600
+    - 2592000
+    - 5184000
+    
+exit-gate-open-time: 20
+
+# ═══════════════════════════════════════════════════════════════
+#             KARY ZA WYJŚCIE Z GRY (QUIT PENALTY)
+# ═══════════════════════════════════════════════════════════════
+quit-penalty:
+  warnings-for-10m: 5
+  warnings-for-20m: 10
+  warnings-for-2w: 20
+  messages:
+    warn-chat: "§c§lOpuściłeś trwający mecz! §7Otrzymujesz ostrzeżenie: §e{warnings}"
+    warn-title: "§c§lOSTRZEŻENIE"
+    warn-subtitle: "§7Wyszedłeś z serwera w trakcie meczu!"
+    ban-reason-10m: "§cZbanowano na 10 minut za wychodzenie z meczu (5 ostrzeżeń)."
+    ban-reason-20m: "§cZbanowano na 20 minut za wychodzenie z meczu (10 ostrzeżeń)."
+    ban-reason-2w: "§cZbanowano na 2 tygodnie za wychodzenie z meczu (20 ostrzeżeń)."
+
+# ═══════════════════════════════════════════════════════════════
+#                         BLOKADA LOBBY
+# ═══════════════════════════════════════════════════════════════
+blocked-lobby-commands:
+  - "/spawn"
+  - "/tpa"
+  - "/home"
+  - "/tpaccept"
+
+# ═══════════════════════════════════════════════════════════════
+#                         BLOKADA W GRZE
+# ═══════════════════════════════════════════════════════════════
+blocked-game-commands:
+  - "/spawn"
+  - "/tpa"
+  - "/home"
+  - "/tpaccept"
+
+# ═══════════════════════════════════════════════════════════════
+#                         WIADOMOŚCI
+# ═══════════════════════════════════════════════════════════════
+
+messages:
+  generator-start: "§aRozpoczynam naprawę generatora..."
+  generator-tip: "§7Trzymaj PPM i wykonuj skill checki!"
+  generator-completed: "§a§l✓ Generator ukończony!"
+  generator-failed: "§c§l✗ Skill Check FAIL! §7(-5% Postępu)"
+  generator-exploded: "§c§l! GENERATOR EKSPLODOWAŁ !"
+  skill-check-success: "§a§l✓ Skill Check!"
+  skill-check-great: "§6§l★ GREAT! §e(+7% Bonus)"
+  skill-check-good: "§a§lGOOD! §7(+5%)"
+  skill-check-miss: "§c§lMISS! §7(-5% Postępu)"
+
+  hook-level-1: "§c§lNA HAKU! §7Poziom I"
+  hook-level-2: "§c§lNA HAKU! §7Poziom II"
+
+# ═══════════════════════════════════════════════════════════════
+#                      TITLES & SUBTITLES
+# ═══════════════════════════════════════════════════════════════
+killer-kill-title: "&c☠ ZABÓJSTWO ☠"
+killer-kill-subtitle: "&4zabiłeś {survivor}"
+  hook-rescued: "§aUratowałeś gracza: §e{player}"
+  hook-rescued-by: "§aZostałeś uratowany przez: §e{player}"
+  hook-died: "§4§lUMARŁEŚ NA HAKU!"
+
+  game-killer: "§c§lKILLER!"
+  game-survivor: "§a§lSURVIVOR!"
+  game-survivor-tip: "§7Napraw 5 generatorów!"
+  game-started: "§c§lGRA ROZPOCZĘTA!"
+  game-ended: "§c§lGRA ZAKOŃCZONA!"
+  game-not-enough-players: "§cNiewystarczająco graczy! Potrzeba minimum 2."
+
+  lobby-busy: "§cNie można użyć /gotowy podczas trwającego meczu!"
+  lobby-busy-not-ready: "§cNie można użyć /niegotowy podczas trwającego meczu!"
+  queue-joined: "§aDołączyłeś do kolejki na następny mecz! §7({count}/5)"
+  queue-full: "§cKolejka jest pełna! §7Maksymalnie 5 graczy może czekać."
+
+  no-permission: "§cNie masz uprawnień!"
+  player-only: "§cTa komenda może być użyta tylko przez gracza!"
+  healed: "§aZostałeś wyleczony!"
+  healed-all: "§aWyleczono {count} graczy!"
+  healed-other: "§aWyleczono gracza: {player}"
+  etrybobserwatora7wkr: "§eTryb obserwatora: §7(Wkrótce)"
+  clbd7niemaszwystarcz: "&c&lBŁĄD! &7Nie masz wystarczającej ilości dusz Nexusa."
+  clbd7sklepjestpenyus: "§c§lBŁĄD! §7Sklep jest pełny. Usuń coś najpierw."
+  alsukces7dodanonowyp: "§a§lSUKCES! §7Dodano nowy przedmiot do sklepu."
+  aprzeniesionoprzedmi: "§aPrzeniesiono przedmiot!"
+  epodnioseprzedmiotkl: "§ePodniosłeś przedmiot. Kliknij kółkiem w docelowy slot."
+  cusunitoprzedmiotzes: "§cUsunięto przedmiot ze sklepu."
+  cskakaniejestzabloko: "§cSkakanie jest zablokowane! Użyj okien aby przeskoczyć."
+  clupadekzduejwysokoc: "§c§lUpadek z dużej wysokości!"
+  clupadekjesteranny: "§c§lUpadek! Jesteś ranny!"
+  elupadekmusiszotrzsn: "§e§lUpadek! Musisz otrząsnąć się."
+  ctujujestgeneratormo: "§cTu już jest generator (może na innej mapie)!"
+  7niewidagoterazbozaa: "§7(Nie widać go teraz, bo załadowana jest inna mapa lub żadna)."
+  alwyrwaesi: "§a§lWYRWAŁEŚ SIĘ!"
+  cofiarasiwyrwaa: "§cOfiara się wyrwała!"
+  aprzeye: "§a✓ Przeżyłeś!"
+  4lzgine: "§4§lZGINĄŁEŚ!"
+  coddalonosiodgenerat: "§cOddalono się od generatora!"
+  cjakokillermoeszuszk: "§cJako Killer możesz uszkodzić generator."
+  ctylkoocalalimognapr: "§cTylko Ocalali mogą naprawiać generatory."
+  atengeneratorjestjun: "§aTen generator jest już naprawiony!"
+  cjunaprawiaszgenerat: "§cJuż naprawiasz generator!"
+  arozpoczynamnaprawge: "§aRozpoczynam naprawę generatora..."
+  cniemoeszniszczygene: "§cNie możesz niszczyć generatorów!"
+  cbrakpermisji: "§cBrak permisji!"
+  cgracznieznaleziony: "§cGracz nie znaleziony!"
+  cmusiszbygraczem: "§cMusisz być graczem!"
+  eexitgatecreatemapa7: "§e/exitgate create [mapa] §7- Tworzy bramę wyjściową"
+  eexitgateloadmapa7ad: "§e/exitgate load [mapa] §7- Ładuje bramy dla danej mapy"
+  eexitgatelist7listaa: "§e/exitgate list §7- Lista aktywnych bram"
+  eexitgatereset7reset: "§e/exitgate reset §7- Resetuje wszystkie bramy"
+  cpodajnazwmapy: "§cPodaj nazwę mapy!"
+  azresetowanowszystki: "§aZresetowano wszystkie załadowane bramy!"
+  copucielobbyikolejk: "§cOpuściłeś lobby i kolejkę."
+  cniejestewkolejce: "§cNie jesteś w kolejce."
+  ustawionostaninjured: "Ustawiono stan: INJURED"
+  uleczonogracza: "Uleczono gracza."
+  powalonogracza: "Powalono gracza."
+  euycie7dbdreload: "§eUżycie: §7/dbd reload"
+  adbdpomylnieprzeadow: "§a[DBD] Pomyślnie przeładowano pliki konfiguracyjne (config.yml, shop.yml, equipment.yml)!"
+  ctakomendamoebyuytat: "§cTa komenda może być użyta tylko przez gracza!"
+  elwindowcommand: "§e§l=== Window Command ==="
+  7windowcreatetworzyo: "§7/window create - Tworzy okno"
+  7windowremoveusuwaok: "§7/window remove - Usuwa okno"
+  7windowlistlistaokie: "§7/window list - Lista okien"
+  aoknoutworzone: "§aOkno utworzone!"
+  coknousunite: "§cOkno usunięte!"
+  elistaokien0: "§eLista okien: 0"
+  cnieznanasubkomenda: "§cNieznana subkomenda!"
+  cgeneratoraddnazwama: "§c/generator add <NazwaMapy>"
+  cgeneratorremove: "§c/generator remove"
+  cgeneratorloadnazwam: "§c/generator load <NazwaMapy>"
+  cgeneratorreset: "§c/generator reset"
+  cpodajnazwmapynpgene: "§cPodaj nazwę mapy! Np. /generator add farma"
+  ausunitogenerator: "§aUsunięto generator."
+  cniepatrzysznagenera: "§cNie patrzysz na generator."
+  azresetowanopostpgen: "§aZresetowano postęp generatorów."
+  azresetowanohaki: "§aZresetowano haki."
+  ausunitohak: "§aUsunięto hak."
+  cbrakhakawpobliu: "§cBrak haka w pobliżu."
+  cdebugshopmanagerjes: "§c[DEBUG] ShopManager jest null!"
+  clbd7brakuprawnie: "§c§lBŁĄD! §7Brak uprawnień."
+  cniemaszuprawniedote: "§cNie masz uprawnień do tej komendy!"
+  cmusiszpatrzenablok: "§cMusisz patrzeć na blok!"
+  cmusiszpatrzenadrzwi: "§cMusisz patrzeć na drzwi! (drewniane, żelazne, itp.)"
+  alszafautworzonanadr: "§a§lSzafa utworzona na drzwiach na które patrzysz!"
+  alszafausunita: "§a§lSzafa usunięta!"
+  cniemaszafynatymblok: "§cNie ma szafy na tym bloku!"
+  alwszystkieszafyzres: "§a§lWszystkie szafy zresetowane!"
+  elkomendyszaf: "§e§l=== Komendy Szaf ==="
+  alockercreate7tworzy: "§a/locker create §7- Tworzy szafę na drzwiach na które patrzysz"
+  alockerremove7usuwas: "§a/locker remove §7- Usuwa szafę na drzwiach na które patrzysz"
+  alockerlist7listawsz: "§a/locker list §7- Lista wszystkich szaf"
+  alockerreset7resetuj: "§a/locker reset §7- Resetuje wszystkie szafy"
+  cbrakuprawnie: "§cBrak uprawnień."
+  8mr6ldbdgame8m: "§8§m-------§r §6§lDBD GAME §8§m-------"
+  egamesetlobby7ustawi: "§e/game setlobby §7- Ustawia spawn lobby"
+  egamesetkilledspawn7: "§e/game setkilledspawn §7- Ustawia spawn dla ZABITYCH"
+  egamesetescapedspawn: "§e/game setescapedspawn §7- Ustawia spawn dla UCIECKINIERÓW"
+  egamestart7wymuszast: "§e/game start §7- Wymusza start gry"
+  egamestop7przerywagr: "§e/game stop §7- Przerywa grę"
+  egameinfo7statusgry: "§e/game info §7- Status gry"
+  apomylnieustawionosp: "§aPomyślnie ustawiono spawn lobby!"
+  cpomylnieustawionosp: "§cPomyślnie ustawiono spawn dla ZABITYCH!"
+  bpomylnieustawionosp: "§bPomyślnie ustawiono spawn dla UCIECKINIERÓW!"
+  6wymuszonostartgry: "§6Wymuszono start gry!"
+  cgraaktualnienietrwa: "§cGra aktualnie nie trwa!"
+  czatrzymanogr: "§cZatrzymano grę."
+  cnieznanakomenda: "§cNieznana komenda."
+  cwystpibdwewntrznysp: "§cWystąpił błąd wewnętrzny! Sprawdź konsolę."
+  msg: "&8§m---------------------------------------"
+  blduszenexusa: "&b&lDUSZE NEXUSA"
+  8eduszetop: "&8▸ &e/dusze top"
+  clbd7niemaszdostpudo: "&c&lBŁĄD! &7Nie masz dostępu do tej komendy."
+  ckomendadostpnatylko: "&cKomenda dostępna tylko dla graczy w grze."
+  clbd7ilomusibyliczbc: "&c&lBŁĄD! &7Ilość musi być liczbą całkowitą."
+  clbd7ilomusibywiksza: "&c&lBŁĄD! &7Ilość musi być większa niż 0."
+  clbd7graczmusibynase: "&c&lBŁĄD! &7Gracz musi być na serwerze."
+  clbd7graczniematylud: "&c&lBŁĄD! &7Gracz nie ma tylu dusz."
+  blduszenexusa87admin: "&b&lDUSZE NEXUSA &8- &7Administracja"
+  8eduszedodajgraczilo: "&8▸ &e/dusze dodaj [gracz] [ilość] [powód]"
+  8eduszezabierzgraczi: "&8▸ &e/dusze zabierz [gracz] [ilość]"
+  8eduszeustawgraczilo: "&8▸ &e/dusze ustaw [gracz] [ilość]"
+  8eduszeczekilo: "&8▸ &e/dusze czek [ilość]"
+  bltop10dusznexusa: "&b&lTOP 10 DUSZ NEXUSA"
+  msg1: "&8§m-------------------------------"
+  7rankingjestobecniep: "&7Ranking jest obecnie pusty."
+  clobbygryniejestusta: "§cLobby gry nie jest ustawione! Admin musi wpisać: §e/game setlobby"
+  cgrajutrwa: "§cGra już trwa!"
+  ejujestewkolejce: "§eJuż jesteś w kolejce!"
+  aldoczyedolobby: "§a§lDołączyłeś do lobby!"
+  cuyciegamemapcreaten: "§cUżycie: /gamemap create <nazwa>"
+  elkrok127ustawspawns: "§e§lKrok 1/2: §7Ustaw spawn SURVIVORÓW"
+  cuyciegamemapsetsurv: "§cUżycie: /gamemap setsurvspawn <nazwa>"
+  alspawnsurvivorwzapi: "§a§lSpawn survivorów zapisany!"
+  elkrok227ustawspawnk: "§e§lKrok 2/2: §7Ustaw spawn KILLERA"
+  cuyciegamemapsetkill: "§cUżycie: /gamemap setkillspawn <nazwa>"
+  cuyciegamemapremoven: "§cUżycie: /gamemap remove <nazwa>"
+  cbrakmap: "§cBrak map!"
+  7stwrzmapegamemapcre: "§7Stwórz mapę: §e/gamemap create <nazwa>"
+  eldostpnemapy: "§e§l=== Dostępne mapy ==="
+  elgamemap: "§e§l=== Game Map ==="
+  7gamemapcreatenazwa8: "§7/gamemap create <nazwa> §8- §7Rozpocznij tworzenie mapy"
+  7gamemapsetsurvspawn: "§7/gamemap setsurvspawn <nazwa> §8- §7Ustaw spawn survivorów"
+  7gamemapsetkillspawn: "§7/gamemap setkillspawn <nazwa> §8- §7Ustaw spawn killera"
+  7gamemapremovenazwa8: "§7/gamemap remove <nazwa> §8- §7Usuń mapę"
+  7gamemaplist87listam: "§7/gamemap list §8- §7Lista map"
+  elprzykad: "§e§lPrzykład:"
+  71egamemapcreatemoja: "§71. §e/gamemap create MojaArena"
+  727stagdziemajspawns: "§72. §7Stań gdzie mają spawn survivors → §e/gamemap setsurvspawn MojaArena"
+  737stagdziemaspawnki: "§73. §7Stań gdzie ma spawn killer → §e/gamemap setkillspawn MojaArena"
+  cbrakuprawnie1: "§cBrak uprawnień!"
+  cuycieekwipunekodblo: "§cUżycie: /ekwipunek odblokuj <gracz> <id_perka>"
+  cgraczjestoffline: "§cGracz jest offline!"
+  ctenperknieistniejel: "§cTen perk nie istnieje lub gracz już go odblokował!"
+  ctylkograczmoeotworz: "§cTylko gracz może otworzyć GUI."
+  ctylkogracz: "§cTylko gracz!"
+  cniemoeszogldayjeszi: "§cNie możesz oglądać – żyjesz i jesteś w grze!"
+  ctengraczniejestjudo: "§cTen gracz nie jest już dostępny."
+  eprzestaeobserwowa: "§ePrzestałeś obserwować."
+  eafkwarningporuszsil: "§e⚠ AFK Warning! Porusz się lub zostaniesz wyrzucony!"
+  czostaeusunityzgryzp: "§c✗ Zostałeś usunięty z gry z powodu AFK!"
+  clbrakuprawnie: "§c§lBrak uprawnień!"
+  aloknoutworzone: "§a§lOkno utworzone!"
+  cloknousunite: "§c§lOkno usunięte!"
+  elokna: "§e§l═══════ OKNA ═══════"
+  msg2: "§e§l═══════════════════════"
+  alwszystkieoknazrese: "§a§lWszystkie okna zresetowane!"
+  elinfookna: "§e§l═══════ INFO OKNA ═══════"
+  msg3: "§e§l═════════════════════════"
+  elwindow: "§e§l═══════ WINDOW ═══════"
+  ewindowcreate7tworzy: "§e/window create §7- Tworzy okno w miejscu gdzie stoisz"
+  ewindowlist7listawsz: "§e/window list §7- Lista wszystkich okien"
+  ewindowreset7usuwaws: "§e/window reset §7- Usuwa wszystkie okna"
+  ewindowinfo7informac: "§e/window info §7- Informacje o oknie"
+  msg4: "§e§l══════════════════════"
+  erozpoczynaszotwiera: "§eRozpoczynasz otwieranie bramy... (Nie ruszaj się!)"
+  cprzerwanootwieranie: "§cPrzerwano otwieranie bramy! Poruszyłeś się."
+  cpotrzeba5ukoczonych: "§cPotrzeba 5 ukończonych generatorów, by otworzyć bramę!"
+  cbramajestjuotwartap: "§cBrama jest już otwarta! Przejdź przez nią, aby uciec."
+  azdoaeuciec: "§aZdołałeś uciec!"
+  copucielobby: "§cOpuściłeś lobby!"
+  adoczyedolobby: "§aDołączyłeś do lobby!"
+  7uyjegamestart7lubcz: "§7Użyj §e/game start §7lub czekaj na 5."
+  7jestejuwkolejcenana: "§7Jesteś już w kolejce na następny mecz."
+  ameczsiskoczy7zostae: "§aMecz się skończył! §7Zostałeś przesunięty do lobby."
+  ctrafiedostrefydlapo: "§cTrafiłeś do strefy dla poległych."
+  agratulacjetrafiedos: "§aGratulacje! Trafiłeś do strefy zwycięzców."
+  czostaewyrzuconyzgry: "§cZostałeś wyrzucony z gry."
+  ctooknojestzablokowa: "§cTo okno jest zablokowane!"
+  cjuleczyszkogo: "§cJuż leczysz kogoś!"
+  cleczenieprzerwane: "§cLeczenie przerwane!"
+  cjesteniesionyprzezk: "§cJesteś niesiony przez killera! §eWykonuj Testy Umiejętności, by się wyrwać!"
+  cupucieocalaego: "§cUpuściłeś ocalałego."
+  clbd7czekjestuszkodz: "&c&lBŁĄD! &7Czek jest uszkodzony!"
+  czostaeolepiony: "§cZostałeś oślepiony!"
+  aolepiekillera: "§aOślepiłeś killera!"
+  auleczono: "§aUleczono!"
+  cjestewpenizdrowy: "§cJesteś w pełni zdrowy."
+  8schowaesiwszafie7wy: "§8Schowałeś się w szafie. §7Wyjdź klikając PPM lub §e/locker exit§7."
+  awyszedezszafy: "§aWyszedłeś z szafy."
+  cniemasztegoklucza: "§cNie masz tego klucza!"
+  alsukces7dodanonowyp1: "§a§lSUKCES! §7Dodano nowy przedmiot do puli."
+  cusunitozbazequipmen: "§cUsunięto z baz equipment.yml!"
+  cosignitolimit4perkw: "§cOsiągnięto limit 4 perków!"
+  czostaepowieszonynah: "§cZostałeś powieszony na haku!"
+  azostaezdjtyzhaka: "§aZostałeś zdjęty z haka!"
+  czostaeZraniony: "§cZostałeś zraniony!"
+  czostaepowalony: "§cZostałeś powalony na ziemię!"
+
+exit-gate:
+  lamp-flash-time: 5
+
+# ═══════════════════════════════════════════════════════════════
+#                    ENDGAME COLLAPSE
+# ═══════════════════════════════════════════════════════════════
+endgame-collapse:
+  death-message: "§cNie zdążyłeś uciec przed zapadnięciem się świata!"
+  death-title: "§c§lKONIEC CZASU"
+  death-subtitle: "§7Nie zdążyłeś uciec..."
